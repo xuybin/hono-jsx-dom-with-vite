@@ -8,6 +8,12 @@
     "vite": "npm:vite@5.4.2"
   },
   "compilerOptions": {
+    "lib": [
+      "deno.ns",
+      "dom",
+      "dom.iterable",
+      "dom.asynciterable"
+    ],
     "jsx": "precompile",
     "jsxImportSource": "npm:hono@^4.2.3/jsx"
   },
