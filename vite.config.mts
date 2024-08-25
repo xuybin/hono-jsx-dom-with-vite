@@ -1,7 +1,7 @@
-import { defineConfig } from "vite";
+import { type ConfigEnv, defineConfig, type UserConfig } from "vite";
 
-export default defineConfig(({ mode }) => {
-  if (mode === "client") {
+export default defineConfig((env: ConfigEnv) => {
+  if (env.mode === "client") {
     return {
       esbuild: {
         jsxImportSource: "hono/jsx/dom", // Optimized for hono/jsx/dom
@@ -23,8 +23,8 @@ export default defineConfig(({ mode }) => {
           },
         },
       },
-    };
+    } as UserConfig;
   } else {
-    return {};
+    return {} as UserConfig;
   }
 });
