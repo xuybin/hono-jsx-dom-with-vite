@@ -1,0 +1,16 @@
+{
+  "tasks": {
+    "dev": "deno serve -A src/index.tsx",
+    "build": "deno run -A --node-modules-dir npm:vite build --mode client "
+  },
+  "lock": false,
+  "nodeModulesDir": false,
+  "compilerOptions": {
+    "jsx": "precompile",
+    "jsxImportSource": "npm:hono@^4.2.3/jsx"
+  },
+  "fmt": {
+    "lineWidth": 200,
+    "exclude": ["**/node_modules", "@(public|static|dist)/**/*"]
+  }
+}

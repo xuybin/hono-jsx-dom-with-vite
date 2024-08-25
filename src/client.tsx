@@ -1,5 +1,5 @@
 import { hc } from 'hono/client'
-import type { AppType } from '.'
+import type { AppType } from './index.tsx'
 import { useState } from 'hono/jsx'
 import { render } from 'hono/jsx/dom'
 

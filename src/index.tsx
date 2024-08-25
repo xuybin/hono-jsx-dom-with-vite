@@ -1,4 +1,7 @@
 import { Hono } from 'hono'
+//import { serveStatic } from 'hono/deno'
+import { serveStatic } from '@hono/node-server/serve-static'
+import { fromFileUrl } from "jsr:@std/path/from-file-url";
 
 const app = new Hono()
 
@@ -10,17 +13,19 @@ const routes = app.get('/api/clock', (c) => {
 
 export type AppType = typeof routes
 
-app.get('*', (c) => {
+app.use('/static/*', serveStatic({ root:  './dist/' }))
+// <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+app.get('/', (c) => {
   return c.html(
     <html>
       <head>
         <meta charSet="utf-8" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
-        {import.meta.env.PROD ? (
-          <script type="module" src="/static/client.js"></script>
-        ) : (
+        
+        {import.meta.env ? (
           <script type="module" src="/src/client.tsx"></script>
+        ) : (
+          <script type="module" src="/static/client.js"></script>
         )}
       </head>
       <body>
