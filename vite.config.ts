@@ -1,27 +1,24 @@
-
-
-import {defineConfig} from 'vite'
+import { defineConfig } from "vite";
 
 export default defineConfig(({ mode }) => {
-  if (mode === 'client') {
+  if (mode === "client") {
     return {
       esbuild: {
-        jsxImportSource: 'hono/jsx/dom' // Optimized for hono/jsx/dom
+        jsxImportSource: "hono/jsx/dom", // Optimized for hono/jsx/dom
       },
       build: {
         sourcemap: true,
         rollupOptions: {
-          input: './src/client.tsx',
+          input: "./src/client.tsx",
           output: {
-            entryFileNames: 'static/client.js',
-            chunkFileNames: 'static/assets/[name]-[hash].js',
-            assetFileNames: 'static/assets/[name].[ext]',
-          }
-        }
-      }
-    }
+            entryFileNames: "static/client.js",
+            chunkFileNames: "static/assets/[name]-[hash].js",
+            assetFileNames: "static/assets/[name].[ext]",
+          },
+        },
+      },
+    };
   } else {
-    return {
-    }
+    return {};
   }
-})
+});

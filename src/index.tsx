@@ -1,19 +1,19 @@
-import { Hono } from 'hono'
-import { serveStatic } from 'hono/deno'
+import { Hono } from "hono";
+import { serveStatic } from "hono/deno";
 
-const app = new Hono()
+const app = new Hono();
 
-const routes = app.get('/api/clock', (c) => {
+const routes = app.get("/api/clock", (c) => {
   return c.json({
-    time: new Date().toLocaleTimeString()
-  })
-})
+    time: new Date().toLocaleTimeString(),
+  });
+});
 
-export type AppType = typeof routes
+export type AppType = typeof routes;
 
-app.use('/static/*', serveStatic({ root:  './dist/' }))
+app.use("/static/*", serveStatic({ root: "./dist/" }));
 // <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
-app.get('/', (c) => {
+app.get("/", (c) => {
   return c.html(
     <html>
       <head>
@@ -24,8 +24,8 @@ app.get('/', (c) => {
       <body>
         <div id="root"></div>
       </body>
-    </html>
-  )
-})
+    </html>,
+  );
+});
 
-export default app
+export default app;
