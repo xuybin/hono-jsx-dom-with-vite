@@ -1,19 +1,6 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "strict": true,
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "types": [
-      "@cloudflare/workers-types",
-      "vite/client"
-    ],
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
-  },
-}
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "jsxImportSource": "hono/jsx"
+    },
+  }

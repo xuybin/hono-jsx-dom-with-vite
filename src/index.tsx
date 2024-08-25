@@ -1,7 +1,5 @@
 import { Hono } from 'hono'
-//import { serveStatic } from 'hono/deno'
-import { serveStatic } from '@hono/node-server/serve-static'
-import { fromFileUrl } from "jsr:@std/path/from-file-url";
+import { serveStatic } from 'hono/deno'
 
 const app = new Hono()
 
