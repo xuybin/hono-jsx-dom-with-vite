@@ -1,7 +1,7 @@
-import { hc } from "hono/client";
+import { hc } from "npm:hono/client";
 import type { AppType } from "./index.tsx";
-import { useState } from "hono/jsx";
-import { render } from "hono/jsx/dom";
+import { useState } from "npm:hono/jsx";
+import { render } from "npm:hono/jsx/dom";
 
 const client = hc<AppType>("/");
 

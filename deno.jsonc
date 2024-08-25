@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno task build;deno serve  -A src/index.tsx",
-    "build": "deno run -A --node-modules-dir npm:vite build --mode client"
+    "build": "(deno run -A --node-modules-dir npm:hono || echo 0);deno run -A --node-modules-dir npm:vite build --mode client"
   },
   "lock": false,
   "imports": {
