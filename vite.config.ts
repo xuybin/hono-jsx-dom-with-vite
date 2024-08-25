@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-// import devServer from '@hono/vite-dev-server'
 
+
+import {defineConfig} from 'vite'
 
 export default defineConfig(({ mode }) => {
   if (mode === 'client') {
@@ -22,11 +22,6 @@ export default defineConfig(({ mode }) => {
     }
   } else {
     return {
-      plugins: [
-        // devServer({
-        //   entry: 'src/index.tsx'
-        // })
-      ]
     }
   }
 })

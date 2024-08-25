@@ -4,7 +4,9 @@
     "build": "deno run -A --node-modules-dir npm:vite build --mode client"
   },
   "lock": false,
-  // "nodeModulesDir": false,
+  "imports": {
+    "vite": "npm:vite@5.4.2"
+  },
   "compilerOptions": {
     "jsx": "precompile",
     "jsxImportSource": "npm:hono@^4.2.3/jsx"
